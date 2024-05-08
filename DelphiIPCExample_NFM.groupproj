@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{105DF094-3D4D-42BB-A2C8-3295C2E3B06E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="IPC_NamedFileMapping\IPCCom_NFM_EXAMPLE.dfm">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IPC_NamedFileMappingReader\IPCCom_NFM_EXAMPLE_READER.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IPCCom_NFM_EXAMPLE">
+        <MSBuild Projects="IPC_NamedFileMapping\IPCCom_NFM_EXAMPLE.dfm"/>
+    </Target>
+    <Target Name="IPCCom_NFM_EXAMPLE:Clean">
+        <MSBuild Projects="IPC_NamedFileMapping\IPCCom_NFM_EXAMPLE.dfm" Targets="Clean"/>
+    </Target>
+    <Target Name="IPCCom_NFM_EXAMPLE:Make">
+        <MSBuild Projects="IPC_NamedFileMapping\IPCCom_NFM_EXAMPLE.dfm" Targets="Make"/>
+    </Target>
+    <Target Name="IPCCom_NFM_EXAMPLE_READER">
+        <MSBuild Projects="IPC_NamedFileMappingReader\IPCCom_NFM_EXAMPLE_READER.dproj"/>
+    </Target>
+    <Target Name="IPCCom_NFM_EXAMPLE_READER:Clean">
+        <MSBuild Projects="IPC_NamedFileMappingReader\IPCCom_NFM_EXAMPLE_READER.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IPCCom_NFM_EXAMPLE_READER:Make">
+        <MSBuild Projects="IPC_NamedFileMappingReader\IPCCom_NFM_EXAMPLE_READER.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IPCCom_NFM_EXAMPLE;IPCCom_NFM_EXAMPLE_READER"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IPCCom_NFM_EXAMPLE:Clean;IPCCom_NFM_EXAMPLE_READER:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IPCCom_NFM_EXAMPLE:Make;IPCCom_NFM_EXAMPLE_READER:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

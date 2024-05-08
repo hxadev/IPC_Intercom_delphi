@@ -1,0 +1,27 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Reader'
+  ClientHeight = 284
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 505
+    Height = 284
+    Align = alClient
+    Caption = 'Reading...'
+    TabOrder = 0
+    ExplicitLeft = 168
+    ExplicitTop = 88
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+  end
+end

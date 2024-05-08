@@ -1,0 +1,12 @@
+unit UTSharedData;
+
+interface
+
+type
+  TSharedData = record
+    Handle: THandle;
+  end;
+
+implementation
+
+end.

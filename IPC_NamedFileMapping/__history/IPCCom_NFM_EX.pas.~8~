@@ -1,0 +1,53 @@
+unit IPCCom_NFM_EX;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  UTSharedData;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    edtContent: TMemo;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+
+    function CreateNamedFileMapping(const nameFile: String): THandle;
+  public
+    { Public declarations }
+  end;
+
+  PSharedData = ^TSharedData;
+
+const
+  BUF_SIZE = 256;
+
+var
+  SharedData: PSharedData;
+  hFileMapping: THandle;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  edtContent.Clear;
+end;
+
+function TForm1.CreateNamedFileMapping(const nameFile: String): THandle;
+begin
+  Result := CreateFileMapping(INVALID_HANDLE_VALUE, nil, PAGE_READWRITE, 0, BUG)
+end;
+
+end.

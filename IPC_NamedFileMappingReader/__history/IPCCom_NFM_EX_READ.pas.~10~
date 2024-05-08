@@ -1,0 +1,57 @@
+unit IPCCom_NFM_EX_READ;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, UTSharedData, Vcl.StdCtrls;
+
+type
+  PSharedData = ^TSharedData;
+
+  TForm2 = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    function GetSharedData: PSharedData;
+  public
+    { Public declarations }
+  end;
+
+const
+  BUF_SIZE = 256;
+
+var
+  hMapFile: THandle;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  var
+  SharedData := Self.GetSharedData;
+  Panel1.Caption := SharedData.Data;
+  // Assuming Data is the field in TSharedData that contains the sent data
+end;
+
+function TForm2.GetSharedData: PSharedData;
+begin
+  // Open the named file mapping
+  hMapFile := OpenFileMapping(FILE_MAP_ALL_ACCESS, False, 'SharedMemory');
+  Win32Check(hMapFile > 0);
+
+  // Map the view of the file mapping to the process's address space
+  Result := MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, BUF_SIZE);
+
+  Win32Check(Assigned(Result));
+end;
+
+end.

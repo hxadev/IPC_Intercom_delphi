@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024/05/08 14:39:47.637,=C:\Users\alfon\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/05/08 14:41:17.881,C:\Users\alfon\Documents\Embarcadero\Studio\Projects\DelphiIPCExample\IPC_NamedFileMapping\IPCCom_NFM_EX.dfm=C:\Users\alfon\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/05/08 14:41:17.881,C:\Users\alfon\Documents\Embarcadero\Studio\Projects\DelphiIPCExample\IPC_NamedFileMapping\IPCCom_NFM_EX.pas=C:\Users\alfon\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/05/08 14:41:29.770,C:\Users\alfon\Documents\Embarcadero\Studio\Projects\DelphiIPCExample\IPC_NamedFileMapping\IPCCom_NFM_EXAMPLE.dfm=C:\Users\alfon\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/05/08 14:47:16.328,=C:\Users\alfon\Documents\Embarcadero\Studio\Projects\DelphiIPCExample\IPC_NamedFileMapping\Unit1.pas</Transaction>
+    <Transaction>2024/05/08 14:47:48.472,C:\Users\alfon\Documents\Embarcadero\Studio\Projects\DelphiIPCExample\IPC_NamedFileMapping\UTSharedData.pas=C:\Users\alfon\Documents\Embarcadero\Studio\Projects\DelphiIPCExample\IPC_NamedFileMapping\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
